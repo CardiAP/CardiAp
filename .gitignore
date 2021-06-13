@@ -1,0 +1,19 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+
+# pyenv
+.ipynb_checkpoints/**
+
+# pycache
+**/__pycache__/**
+
+# non-sample photos
+photos_examples/**/*.json
+photos_examples/*/*.tif
