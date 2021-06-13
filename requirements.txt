@@ -1,0 +1,6 @@
+voila
+opencv-python
+ipywidgets
+pandas
+numpy
+peakutils
