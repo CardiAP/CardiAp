@@ -5,3 +5,5 @@ pandas
 numpy
 peakutils
 ipython
+seaborn
+matplotlib
