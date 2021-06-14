@@ -24,6 +24,6 @@ $ pip3 install -r requirements.txt
 
 ```bash
 $ voila CardiAP.ipynb
+# start with live reload
+$ voila CardiAP.ipynb  --autoreload=True
 ```
-
-
