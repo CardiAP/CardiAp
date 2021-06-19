@@ -1,6 +1,8 @@
 from peakutils import indexes
 import numpy as np
 
+class PeaksError(ValueError):
+    pass
 
 def calculate_peaks(vector, min_dist_between_max_peaks):
     max_peaks = _max_peaks_positions(vector, min_dist_between_max_peaks)
@@ -10,12 +12,15 @@ def calculate_peaks(vector, min_dist_between_max_peaks):
 
 
 def _max_peaks_positions(vector, min_dist_between_max_peaks):
+    if len(vector) == 0:
+        raise PeaksError("Empty vector")
+
     threshold = 1.0 / max(vector) if (max(vector) > 0) else 0
     possible_max_peaks = indexes(np.array(vector), thres=threshold, min_dist=min_dist_between_max_peaks)
     intensity_avg = sum(vector) / len(vector)
     max_peaks = [max_peak for max_peak in possible_max_peaks if vector[max_peak] > intensity_avg/8]
 
-    if len(max_peaks) == 0: raise ValueError("Peaks not found")
+    if len(max_peaks) == 0: raise PeaksError("Peaks not found")
 
     return max_peaks
 

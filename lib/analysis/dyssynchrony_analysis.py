@@ -1,6 +1,6 @@
 import numpy as np
 
-from lib.analysis.peaks_calculation import calculate_peaks
+from lib.analysis.peaks_calculation import calculate_peaks, PeaksError
 from lib.analysis.peak_given import calculate_peaks_slice
 from lib.analysis.statistical_functions import calculate_amplitudes, calculate_time_to_peaks, \
     calculate_times_to_half_peaks, calculate_taus
