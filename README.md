@@ -1,9 +1,11 @@
-[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CardiAP/CardiAp/HEAD?urlpath=%2Fvoila%2Frender%2FCardiAP.ipynb)
-
 
 CardiAP
 =======
+
+
+Copyright © `2020-2021 ` `Velez Rueda, Garcia Smith, Sommese`
+
 
 
 > Python Server for performing biomedical images analysis
