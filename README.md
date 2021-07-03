@@ -19,7 +19,7 @@ This project is hosted in Binder. You can launch [CardiAP here](http://cardiap.h
 
 ```bash
 # Create and active a virtual env
-$ virtualenv venv
+$ virtualenv .venv
 $ . venv/bin/activate
 # install dependencies
 $ pip3 install -r requirements.txt 
