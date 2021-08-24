@@ -30,9 +30,14 @@ def _min_peaks_positions(intensities, max_peaks):
     minimums = []
     last_max = 0
     for max_index in max_peaks:
-        minimums.append(np.array(intensities[last_max:max_index]).argmin() + last_max)
+        minimums.append(minimo_bl(intensities[last_max:max_index]) + last_max)
         last_max = max_index
 
-    minimums.append(np.array(intensities[last_max:len(intensities)]).argmin() + last_max)
+    minimums.append(minimo_bl(intensities[last_max:len(intensities)]) + last_max)
+
 
     return minimums
+    
+def minimo_bl (vector):
+    b = -min((x, -i) for i, x in enumerate(vector))[1]
+    return b
