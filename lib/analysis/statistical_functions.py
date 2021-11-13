@@ -12,6 +12,9 @@ BAD_MAX_AND_MIN_LENGTHS = "The min peaks list needs to be bigger by 1 elements t
 MIN_PEAKS_ARE_REQUIRED = "At least 1 min peak is required"
 MAX_PEAKS_ARE_REQUIRED = "At least 1 max peak is required"
 
+class TausError(ValueError):
+    def feature(self):
+        return "taus"
 
 def _maxs_mins_input_validation(max_peaks, min_peaks):
     assert len(max_peaks) > 0, MAX_PEAKS_ARE_REQUIRED
@@ -73,14 +76,19 @@ def calculate_times_to_half_peaks(intensities, max_peaks_positions, min_peaks_po
 
 
 def _calculate_tau(times, intensities):
+    def _log(intensity):
+        if intensity != 0: 
+            return log(intensity)
+        else:
+            raise TausError("Zero intensity")
+            
     if len(times) == 0 or len(intensities) == 0:
         return 0
     else:
         x_axis = np.asarray([[1, t] for t in times])
-        y_axis = np.asarray([log(intensity) for intensity in intensities]).T
+        y_axis = np.asarray([_log(intensity) for intensity in intensities]).T
         (w, _, _, _) = lstsq(x_axis, y_axis, rcond=None)
         return -1.0 / w[1]
-
 
 def calculate_taus(intensities, max_peaks_positions, min_peaks_positions, calibration=1):
     _maxs_mins_input_validation(max_peaks_positions, min_peaks_positions)

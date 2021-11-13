@@ -2,7 +2,8 @@ from peakutils import indexes
 import numpy as np
 
 class PeaksError(ValueError):
-    pass
+    def feature(self):
+        return "peak"
 
 def calculate_peaks(vector, min_dist_between_max_peaks):
     max_peaks = _max_peaks_positions(vector, min_dist_between_max_peaks)

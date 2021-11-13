@@ -11,7 +11,7 @@ def analyze_image(image, min_dist_between_max_peaks, calibration, slice_width=0)
     image_analysis = _analyze_matrix(image, min_dist_between_max_peaks, calibration)
     slices_analysis = [_analyze_matrix_slice(matrix, min_dist_between_max_peaks, image_analysis, calibration) for matrix in
                        split_vertically_by(image, slice_width)] if slice_width > 0 else []
-
+    
     return ({
         "image": image_analysis,
         "slices": slices_analysis
