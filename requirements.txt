@@ -8,3 +8,4 @@ ipython
 seaborn
 matplotlib
 interactivecrop
+pyhrv
