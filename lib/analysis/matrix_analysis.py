@@ -3,7 +3,7 @@ import numpy as np
 from lib.analysis.peaks_calculation import calculate_peaks, PeaksError
 from lib.analysis.peak_given import calculate_peaks_slice
 from lib.analysis.statistical_functions import calculate_amplitudes, calculate_time_to_peaks, \
-    calculate_times_to_half_peaks, calculate_taus
+    calculate_times_to_half_peaks, calculate_taus, TausError
 from lib.image.image_data import split_vertically_by
 
 
@@ -16,7 +16,6 @@ def analyze_image(image, min_dist_between_max_peaks, calibration, slice_width=0)
         "image": image_analysis,
         "slices": slices_analysis
     })
-
 
 def _analyze_matrix(matrix, min_dist_between_max_peaks, calibration):
     intensities = np.asarray(_mean_columns(matrix), dtype=np.int16)

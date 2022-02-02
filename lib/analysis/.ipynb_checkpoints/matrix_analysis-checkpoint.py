@@ -17,7 +17,6 @@ def analyze_image(image, min_dist_between_max_peaks, calibration, slice_width=0)
         "slices": slices_analysis
     })
 
-
 def _analyze_matrix(matrix, min_dist_between_max_peaks, calibration):
     intensities = np.asarray(_mean_columns(matrix), dtype=np.int16)
     (max_peaks_positions, min_peaks_positions) = calculate_peaks(intensities, min_dist_between_max_peaks)
