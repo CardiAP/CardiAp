@@ -24,7 +24,7 @@ def _analyze_matrix(matrix, min_dist_between_max_peaks, calibration):
     (max_peaks_positions, min_peaks_positions) = calculate_peaks(intensities, min_dist_between_max_peaks)
     max_peaks_intensities = _intensities_in_positions(intensities, max_peaks_positions)
     min_peaks_intensities = _intensities_in_positions(intensities, min_peaks_positions)
-
+    
     return ({
         "intensities": intensities,
         "max_peaks_positions": max_peaks_positions,
