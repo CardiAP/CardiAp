@@ -17,3 +17,4 @@ venv.bak/
 # non-sample photos
 photos_examples/**/*.json
 photos_examples/*/*.tif
+CardiAP-Copy1.ipynb
