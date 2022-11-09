@@ -13,7 +13,7 @@ Copyright © `2020-2021 ` `Velez Rueda, Garcia Smith, Sommese`
 
 # Live server
 
-This project is hosted in Binder. You can launch [CardiAP here](http://cardiap.herokuapp.com/) 
+This project is hosted in Binder. You can launch [CardiAP here](https://mybinder.org/v2/gh/CardiAP/CardiAp/HEAD?urlpath=%2Fvoila%2Frender%2FCardiAP.ipynb) 
 
 # Installation
 
