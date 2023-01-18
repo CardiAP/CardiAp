@@ -1,13 +1,10 @@
-name: python 3.8
-dependencies:
-  - python=3.8
-  - voila
-  - opencv-python
-  - ipywidgets
-  - pandas
-  - numpy
-  - peakutils
-  - ipython
-  - seaborn
-  - matplotlib
-  - interactivecrop
+voila
+opencv-python
+ipywidgets
+pandas
+numpy
+peakutils
+ipython
+seaborn
+matplotlib
+interactivecrop
