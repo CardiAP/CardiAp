@@ -1,4 +1,4 @@
-ipywidgets==7.6.5
+ipywidgets==7.6
 voila==0.2.16
 opencv-python
 pandas
@@ -8,3 +8,4 @@ ipython
 seaborn
 matplotlib
 interactivecrop
+Pillow==9.2.0
