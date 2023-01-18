@@ -1,5 +1,5 @@
-ipywidgets==7.6
-voila==0.2.16
+ipywidgets==7.6.5
+voila
 opencv-python
 pandas
 numpy
