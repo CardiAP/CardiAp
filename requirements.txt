@@ -1,7 +1,7 @@
-voila
-opencv-python
+voila==0.2.16
+opencv-python==4.5.1.48
 ipywidgets==7.6.5
-pandas
+pandas==1.2.2
 numpy
 peakutils
 ipython
