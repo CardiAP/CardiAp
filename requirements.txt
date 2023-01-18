@@ -1,4 +1,3 @@
-python==3.8.10
 voila==0.2.16
 opencv-python==4.5.1.48
 ipywidgets==7.6.5
