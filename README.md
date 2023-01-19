@@ -10,10 +10,10 @@ Copyright © `2020-2021 ` `Velez Rueda, Garcia Smith, Sommese`
 
 > Python Server for performing biomedical images analysis
 
-You can run the web version of CardiAP using Binder server
 
 # Live server
-This project is hosted in Binder. You can launch [CardiAP here](https://mybinder.org/v2/gh/CardiAP/CardiAp/HEAD?urlpath=%2Fvoila%2Frender%2FCardiAP.ipynb) 
+You can run the web version of CardiAP using Binder server. 
+You can launch [CardiAP here](https://mybinder.org/v2/gh/CardiAP/CardiAp/HEAD?urlpath=%2Fvoila%2Frender%2FCardiAP.ipynb) 
 
 # Installing CardiAP locally
 
