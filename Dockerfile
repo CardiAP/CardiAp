@@ -14,4 +14,4 @@ COPY CardiAP.ipynb CardiAP.ipynb
 
 EXPOSE 5000
 
-ENTRYPOINT ["voila",  "--port=5000", "--no-browser",  "CardiAP.ipynb"]
+ENTRYPOINT ["voila",  "--port=5000", "--no-browser",  "--Voila.ip='0.0.0.0'", "CardiAP.ipynb"]
