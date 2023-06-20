@@ -12,16 +12,18 @@ Copyright © `2020-2021 ` `Velez Rueda, Garcia Smith, Sommese`
 
 
 # Live server
-You can run the web version of CardiAP using Binder server. 
-You can launch [CardiAP here](https://mybinder.org/v2/gh/CardiAP/CardiAp/HEAD?urlpath=%2Fvoila%2Frender%2FCardiAP.ipynb) 
+You can run the web version of CardiAP hosted in AWS.
+You can launch [CardiAP here](http://50.19.16.236/) 
 
 # Running CardiAP using docker
 
-You can easily run CardiAP using [Docker](https://docs.docker.com/desktop/install/windows-install/) by running:
+You can easily run CardiAP using [Docker](https://docs.docker.com/desktop/install/windows-install/) by running in your terminal the following command:
 
 ```bash
 docker run -it --rm --net host ajvelezrueda/cardiap
 ```
+
+CardiAP will be listening at [http://localhos:5000/](http://localhos:5000/)
 
 
 # Installing CardiAP locally
