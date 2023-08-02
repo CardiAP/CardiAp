@@ -67,7 +67,23 @@ def crop_vertical(image_matrix, pixel_start, pixel_end):
 def crop_horizontal(image_matrix, pixel_start, pixel_end):
     return image_matrix[0:len(image_matrix), pixel_start:pixel_end]
 
-
+def multiroi(image_matrix):
+    ''' Selects ROIs on the given image. Function creates a window and allows user to select a ROIs using mouse. Controls: use `space` or `enter` to finish current selection and start a new one, use `esc` to terminate multiple ROI selection process.'''
+    SelectedRegions = []
+    #select ROIs function
+    ROIs = cv2.selectROIs("Select Rois", image_matrix)
+    #Crop selected roi from raw image
+    for rect in ROIs:
+        x1=rect[0]
+        y1=rect[1]
+        x2=rect[2]
+        y2=rect[3]
+        #crop roi from original image
+        SelectedRegions.append(image_matrix[y1:y1+y2,x1:x1+x2])
+    #hold window
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    return SelectedRegions
 # Receives a 2d Martix and the with of the slice
 # Returns a 3d Matrix that has the received matrix splited verticaly by the slice width
 # Can raise ValueError if the slice width is bigger than the x axis of the image
