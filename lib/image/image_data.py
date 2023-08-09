@@ -79,7 +79,7 @@ def multiroi(image_matrix):
         x2=rect[2]
         y2=rect[3]
         #crop roi from original image
-        SelectedRegions.append(image_matrix[y1:y1+y2,x1:x1+x2])
+        SelectedRegions.append([x1,y1,x2,y2])
     #hold window
     cv2.waitKey(0)
     cv2.destroyAllWindows()
