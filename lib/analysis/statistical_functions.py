@@ -103,3 +103,17 @@ def calculate_taus(intensities, max_peaks_positions, min_peaks_positions, calibr
         taus.append(_calculate_tau(time_between_peaks, intensities_between_peaks))
 
     return taus
+
+def closest_value(lst, value):
+    return lst[min(range(len(lst)), key = lambda i: abs(lst[i]-value))]
+
+def tau_estimation(intensities, max_peaks_positions, min_peaks_positions, calibration=1):
+    _maxs_mins_input_validation(max_peaks_positions, min_peaks_positions)
+    _intensities_validations(intensities, max_peaks_positions, min_peaks_positions)
+    
+    taus = []
+    for (max_index, min_index) in np.column_stack((max_peaks_positions, min_peaks_positions[1:len(min_peaks_positions)])):
+        intensities_between_peaks = np.asarray(intensities[max_index:min_index])
+        estimator = ((intensities_between_peaks.max()-intensities_between_peaks.min())*0.367879441) + intensities_between_peaks.min()
+        taus.append(np.where(intensities_between_peaks==closest_value(intensities_between_peaks, estimator))[0][0]*calibration)
+    return taus

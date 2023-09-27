@@ -3,7 +3,7 @@ import numpy as np
 from lib.analysis.peaks_calculation import calculate_peaks, PeaksError
 from lib.analysis.peak_given import calculate_peaks_slice
 from lib.analysis.statistical_functions import calculate_amplitudes, calculate_time_to_peaks, \
-    calculate_times_to_half_peaks, calculate_taus, TausError
+    calculate_times_to_half_peaks, tau_estimation, TausError
 from lib.image.image_data import split_vertically_by
 
 
@@ -32,7 +32,7 @@ def _analyze_matrix(matrix, min_dist_between_max_peaks, calibration):
         "amplitudes": calculate_amplitudes(max_peaks_intensities, min_peaks_intensities),
         "times_to_peaks": calculate_time_to_peaks(max_peaks_positions, min_peaks_positions, calibration),
         "times_to_half_peaks": calculate_times_to_half_peaks(intensities, max_peaks_positions, min_peaks_positions, calibration),
-        "tau_s": calculate_taus(intensities, max_peaks_positions, min_peaks_positions, calibration)
+        "tau": tau_estimation(intensities, max_peaks_positions, min_peaks_positions, calibration)
     })
 
 def _analyze_matrix_slice(matrix, min_dist_between_max_peaks,result,calibration):
@@ -50,7 +50,7 @@ def _analyze_matrix_slice(matrix, min_dist_between_max_peaks,result,calibration)
         "amplitudes": calculate_amplitudes(max_peaks_intensities, min_peaks_intensities),
         "times_to_peaks": calculate_time_to_peaks(max_peaks_positions, min_peaks_positions, calibration),
         "times_to_half_peaks": calculate_times_to_half_peaks(intensities, max_peaks_positions, min_peaks_positions, calibration),
-        "tau_s": calculate_taus(intensities, max_peaks_positions, min_peaks_positions, calibration)
+        "tau": tau_estimation(intensities, max_peaks_positions, min_peaks_positions, calibration)
     })
 
 def _mean_columns(slice):
